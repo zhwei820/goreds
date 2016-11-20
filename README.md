@@ -6,8 +6,6 @@
 
 goreds is a Go port of [tj/reds](http://github.com/tj/reds) for Node.js
 
-Stop words are stripped and the metaphone and porter stemmer algorithms are used to index and search.
-
 ## About
 
 via [https://github.com/tj/reds#about](https://github.com/tj/reds#about)
