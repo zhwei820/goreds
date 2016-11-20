@@ -1,15 +1,13 @@
 language: go
 
-go:
-  - 1.6
-  - 1.7
+go: 1.7
 
 install:
   - go get -u github.com/kardianos/govendor
   - govendor sync
 
 env:
-  - REDIS_URL:redis://localhost:6379
+  - REDIS_URL=redis://localhost:6379
 
 services:
   - redis-servier
