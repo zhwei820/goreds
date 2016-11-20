@@ -1,0 +1,14 @@
+language: go
+
+go:
+  - 1.6
+  - 1.7
+
+install:
+  - go get -u github.com/kardianos/govendor
+  - govendor sync
+
+services:
+  - redis-servier
+
+script: govendor test +local
