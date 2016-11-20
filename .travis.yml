@@ -10,6 +10,6 @@ env:
   - REDIS_URL=redis://localhost:6379
 
 services:
-  - redis-servier
+  - redis-server
 
 script: govendor test +local
