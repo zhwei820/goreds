@@ -1,4 +1,4 @@
-package goreds
+package goreds // import "blainsmith.com/go/goreds"
 
 import (
 	"github.com/blainsmith/goreds/words"
