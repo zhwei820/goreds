@@ -1,7 +1,7 @@
 package goreds // import "blainsmith.com/go/goreds"
 
 import (
-	"github.com/blainsmith/goreds/words"
+	"blainsmith.com/go/goreds/words"
 	"github.com/garyburd/redigo/redis"
 )
 

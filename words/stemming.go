@@ -1,4 +1,4 @@
-package words
+package words // import "blainsmith.com/go/goreds/words"
 
 import "github.com/a2800276/porter"
 

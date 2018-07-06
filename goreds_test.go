@@ -7,7 +7,7 @@ import (
 
 	"github.com/garyburd/redigo/redis"
 
-	"github.com/blainsmith/goreds"
+	"blainsmith.com/go/goreds"
 )
 
 var conn, err = redis.DialURL(os.Getenv("REDIS_URL"))

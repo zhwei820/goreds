@@ -3,7 +3,7 @@ package words_test
 import (
 	"testing"
 
-	"github.com/blainsmith/goreds/words"
+	"blainsmith.com/go/goreds/words"
 )
 
 func TestSplit(t *testing.T) {
