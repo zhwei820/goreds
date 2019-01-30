@@ -57,10 +57,10 @@ func (client *Client) Remove(id string) (interface{}, error) {
 }
 
 // Query performs a search against the database and returns a slice of ids that match
-func (client *Client) Query(text string, operator Operator) ([]string, error) {
+func (client *Client) Query(text string) ([]string, error) {
 	if ContainsCh(text) { // 汉字
-		return client.CliCh.Query(text, operator)
+		return client.CliCh.Query(text, AND)
 	}
-	return client.CliEn.Query(text, operator)
+	return client.CliEn.Query(text, AND)
 
 }

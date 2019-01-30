@@ -20,10 +20,10 @@ func main() {
 	search.Remove("2")
 
 	// query the search index that should match ids 1 and 4
-	ids, _ := search.Query("index text", goreds.AND)
+	ids, _ := search.Query("index text")
 	fmt.Println(ids)
-	// Output: [4 1]
-	ids, _ = search.Query("幼儿园", goreds.AND)
+	ids, _ = search.Query("幼儿园")
 	fmt.Println(ids)
-	// Output: [4 1]
+	ids, _ = search.Query("非洲")
+	fmt.Println(ids)
 }
