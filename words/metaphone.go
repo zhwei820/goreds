@@ -1,4 +1,4 @@
-package words // import "blainsmith.com/go/goreds/words"
+package words // import "github.com/blainsmith/goreds/words"
 
 import "github.com/dotcypress/phonetics"
 

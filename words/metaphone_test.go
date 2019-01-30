@@ -3,7 +3,7 @@ package words_test
 import (
 	"testing"
 
-	"blainsmith.com/go/goreds/words"
+	"github.com/blainsmith/goreds/words"
 )
 
 func TestMetaphoneMap(t *testing.T) {

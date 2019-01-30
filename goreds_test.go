@@ -7,7 +7,7 @@ import (
 
 	"github.com/garyburd/redigo/redis"
 
-	"blainsmith.com/go/goreds"
+	"github.com/blainsmith/goreds"
 )
 
 var conn, err = redis.DialURL(os.Getenv("REDIS_URL"))
@@ -17,13 +17,13 @@ var search = goreds.NewClient(conn, "testing")
 func TestNewClient(t *testing.T) {
 	t.Run("with namespace", func(t *testing.T) {
 		ns := goreds.NewClient(conn, "WITH_NAMESPACE")
-		if ns.Namespace != "WITH_NAMESPACE" {
+		if ns.CliEn.Namespace != "WITH_NAMESPACE" {
 			t.Error("wrong namespace is set")
 		}
 	})
 	t.Run("without namespace", func(t *testing.T) {
 		ns := goreds.NewClient(conn, "")
-		if ns.Namespace != "goreds" {
+		if ns.CliEn.Namespace != "goreds" {
 			t.Error("wrong default namespace is set")
 		}
 	})

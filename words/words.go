@@ -1,4 +1,4 @@
-package words // import "blainsmith.com/go/goreds/words"
+package words // import "github.com/blainsmith/goreds/words"
 
 import "strings"
 
@@ -24,6 +24,14 @@ var stopwords = []string{
 	"you", "your", "yours", "yourself",
 	"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
 	"$", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "_",
+	"",
+}
+
+var chstopwords = []string{
+	",", ".", "?", "!", "\"", " ", "@", "，", "。", "、", "？", "！", "：", "“", "”", "；", "　", "（", "）", "《", "》", "~", "*", "<", ">",
+	"/", "\\", "|", "-", "_", "+", "=", "&", "^", "%", "#", "`", ";", "$", "￥", "‘", "’", "〉", "〈", "…", "＞", "＜", "＠", "＃", "＄", "％",
+	"︿", "＆", "＊", "＋", "～", "｜", "［", "］", "｛", "｝",
+	"",
 }
 
 func Split(text string) []string {
@@ -42,9 +50,25 @@ func Count(words []string) map[string]int {
 
 func StripStopWords(words []string) []string {
 	for _, sw := range stopwords {
+		var ii = 0
 		for i, w := range words {
 			if w == sw {
-				words = append(words[:i], words[i+1:]...)
+				words = append(words[:i-ii], words[i+1-ii:]...)
+				ii += 1
+			}
+		}
+	}
+
+	return words
+}
+
+func StripChStopWords(words []string) []string {
+	for _, sw := range chstopwords {
+		var ii = 0
+		for i, w := range words {
+			if w == sw {
+				words = append(words[:i-ii], words[i+1-ii:]...)
+				ii += 1
 			}
 		}
 	}
