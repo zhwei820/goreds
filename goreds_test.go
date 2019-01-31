@@ -43,7 +43,7 @@ func ExampleNewClient() {
 	search.Remove("2")
 
 	// query the search index that should match ids 1 and 4
-	ids, _ := search.Query("index text", goreds.AND)
+	ids, _ := search.Query("index text")
 	fmt.Println(ids)
 	// Output: [4 1]
 }
@@ -70,7 +70,7 @@ func TestQuery(t *testing.T) {
 	search.Index("this text not be found", "333")
 
 	t.Run("AND", func(t *testing.T) {
-		ids, err := search.Query("baller text", goreds.AND)
+		ids, err := search.Query("baller text")
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -86,7 +86,7 @@ func TestQuery(t *testing.T) {
 	})
 
 	t.Run("OR", func(t *testing.T) {
-		ids, err := search.Query("baller text", goreds.OR)
+		ids, err := search.Query("baller text")
 		if err != nil {
 			t.Fatal(err)
 		}
